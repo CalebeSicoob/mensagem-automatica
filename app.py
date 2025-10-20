@@ -17,7 +17,7 @@ pagina_clientes = planilha['Planilha1']
 def clicar(driver, wait):
     for linha in pagina_clientes.iter_rows(min_row=2, values_only=True):
         nome, telefone, vencimento = linha[1], linha[2], linha[3]
-        mensagem = f'Olá, tudo bem?'
+        mensagem = f'Olá, tudo bem? Seu vencimento é no dia {vencimento} agradecemos a compreenção!'
         print(nome, telefone, vencimento)
 
         try:
