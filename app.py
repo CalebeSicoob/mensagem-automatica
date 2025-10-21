@@ -6,7 +6,14 @@ from urllib.parse import quote
 import openpyxl
 from time import sleep
 
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_argument(r"user-data-dir=C:\automação22\wats2")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--disable-gpu")
+options.add_argument("--disable-extensions")
+options.add_argument("--remote-debugging-port=922")
+driver = webdriver.Chrome(options=options)
 driver.get('https://web.whatsapp.com/')
 wait = WebDriverWait(driver, 30)
 sleep(20)
